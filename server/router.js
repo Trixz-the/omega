@@ -4,21 +4,7 @@ const XMLHttpRequest = require("xhr2");
 
 var xhr = new XMLHttpRequest();
 
-let dataSender = (data2) => {
-  let xhr2 = new XMLHttpRequest();
-  xhr2.open("POST", "http://127.0.0.1:5000/api/search-data");
-  xhr2.setRequestHeader("Accept", "application/json");
-  xhr2.setRequestHeader("Content-Type", "application/json");
-
-  xhr2.onreadystatechange = function () {
-    if (xhr2.readyState === 4) {
-      console.log(xhr2.status);
-      console.log(xhr2.responseText);
-    }
-  };
-
-  xhr2.send(data2);
-};
+let response = "";
 
 router.post("/search", (req, res) => {
   let title = req.body.title;
@@ -64,10 +50,32 @@ router.post("/search", (req, res) => {
       if (search_response.results[0].downloads == "") {
         res.send("none");
       } else {
-        let pdfLink = search_response.results[0].downloads[0].links.pdf
+        let pdfLink = search_response.results[0].downloads[0].links.pdf;
 
-        sendData = `"https://ntrs.nasa.gov${pdfLink}"`
+        let dataSender = (data2) => {
+          let xhr2 = new XMLHttpRequest();
+          xhr2.open("POST", "http://127.0.0.1:5000/api/search-data");
+          xhr2.setRequestHeader("Accept", "application/json");
+          xhr2.setRequestHeader("Content-Type", "application/json");
+        
+          xhr2.onreadystatechange = function () {
+            if (xhr2.readyState === 4) {
+              res.status(200).json(JSON.stringify(xhr2.responseText))
+            }
+          };
+        
+          xhr2.send(data2);
+        };        
+
+        sendData = `"https://ntrs.nasa.gov${pdfLink}"`;
         dataSender(sendData)
+
+        // console.log(pdfLink);
+        // for (i in results) {
+        //   console.log();
+        // }
+        // sendData = `"https://ntrs.nasa.gov${pdfLink}"`;
+        // dataSender(sendData)
         // SEND PYTHON ENDPOINT
         // res.status(200).json(search_response.results[0].downloads[0].links.pdf);
       }
