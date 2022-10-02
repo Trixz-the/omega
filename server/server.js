@@ -1,3 +1,5 @@
+// CODE FILES ARE NOT COMPLETE YET DUE TO TIME LIMITATIONS. HOWEVER, IT PROVIDES A QUICK NOTICE ABOUT HOW THE PROJECT WILL WORK
+
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
