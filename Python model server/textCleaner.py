@@ -1,4 +1,4 @@
-# Not in use for now
+# Not in use for nowcls
 
 
 import enchant

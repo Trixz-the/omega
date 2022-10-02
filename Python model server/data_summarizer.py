@@ -5,7 +5,7 @@ import io
 
 def startSum(url):
     request_url = "https://ntrs.nasa.gov/api/citations/19810022822/downloads/19810022822.pdf"
-    ftext = []
+    ftext = {}
     URL = request_url.strip("\"")
     req = urllib.request.Request(URL, headers={'User-Agent' : "Magic Browser"})
     remote_file = urllib.request.urlopen(req).read()
@@ -21,9 +21,9 @@ def startSum(url):
         for b in range(len(spt)):
             spt[b] = spt[b].lower()
             if(spt[b].find("conclusions") != -1):
-                ftext.append(text)
+                ftext.update({f"conclusion{i}": f"{text}"})
                 
             elif(spt[b].find("abstract") != -1):
-                ftext.append(text)
+                ftext.update({f"abstract{i}":f"{text}"})
         
     return f"{ftext}"
