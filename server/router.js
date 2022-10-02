@@ -1,3 +1,6 @@
+// CODE FILES ARE NOT COMPLETE YET DUE TO TIME LIMITATIONS. HOWEVER, IT PROVIDES A QUICK NOTICE ABOUT HOW THE PROJECT WILL WORK
+
+
 const router = require("express").Router();
 const request = require("request");
 const XMLHttpRequest = require("xhr2");
@@ -43,10 +46,7 @@ router.post("/search", (req, res) => {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       const search_response = JSON.parse(xhr.responseText);
-
-      // DEV WARNING
-      console.log(xhr.status);
-      //
+      
       if (search_response.results[0].downloads == "") {
         res.send("none");
       } else {
