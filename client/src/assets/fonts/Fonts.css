@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "black";
+  src: url("./Fontspring-DEMO-biennale-black.otf");
+}
+
+@font-face {
+  font-family: "bold";
+  src: url("./Fontspring-DEMO-biennale-bold.otf");
+}
+
+@font-face {
+  font-family: "heavy";
+  src: url("./Fontspring-DEMO-biennale-heavy.otf");
+}
+
+@font-face {
+  font-family: "medium";
+  src: url("./Fontspring-DEMO-biennale-medium.otf");
+}
+
+@font-face {
+  font-family: "light";
+  src: url("./Fontspring-DEMO-biennale-light.otf");
+}
+
+@font-face {
+  font-family: "semi";
+  src: url("./Fontspring-DEMO-biennale-semibold.otf");
+}

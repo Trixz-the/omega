@@ -1,0 +1,55 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.444);
+    backdrop-filter: blur(50px);
+    box-shadow: 0px 0px 10px #dbdbdb;
+}
+
+.mainComp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 90%;
+}
+
+.logo{
+    width: 40px;
+    height:40px;
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 37%;
+    font-family: "semi";
+    color: rgb(18, 18, 18);
+    font-size: 17px;
+}
+
+#speop{
+    background-color: rgb(0, 85, 255);
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.option:hover{
+    color: rgb(0, 85, 255);
+    transition: 0.4s ease;
+    cursor: pointer;
+}
